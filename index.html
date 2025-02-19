@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Itch.io BrowserGames</title>
+    <style>
+        .websiteselectionbar {
+          display: flex;
+          flex-direction: row;
+          height: 50px;
+          width: viewport;
+          margin-top: 0%;
+          margin-left: 0%;
+          margin-bottom: 10px;
+        }
+
+        .websiteselectionbar img{
+          border-radius: 25%;
+        }
+
+        .buttonrow {
+          display: flex;
+          flex-direction: row;
+          height: 100%;
+          width: 90vw;
+          margin-top: 0%;
+          margin-left: 20px;
+        }
+
+        .button {
+          background-color:#333333;
+          color:#FFFFFF;
+          font-family: verdana;
+          font-size: 100%;
+          height:50px;
+          transition: 0.5s;
+        }
+        .button:hover {
+          background-color:#444444;
+          transition: 0.5s;
+        }
+
+        .header {
+          display: flex;
+          align-items: center;
+        }
+
+        .header-text {
+          font-size: 1vw;
+          margin: 0px;
+        }
+
+        .header-title {
+          font-size: 2vw;
+          margin: 0px;
+        }
+
+      </style>
+</head>
+<body style="background-color:#222222; font-family: verdana; color:#FFFFFF;">
+  <div class="websiteselectionbar">
+    <img src="./TPGLogo.jpg" alt="PotatoGamer Logo">
+    <div class="buttonrow">
+      <a href="https://thepotatogamer0.github.io">
+        <button class="button">Home</button>
+      </a>
+      <a href="https://thepotatogamer0.github.io/Itch.io-BrowserGames/">
+        <button class="button">Itchy</button>
+      </a>
+      <a href="https://thepotatogamer0.github.io/Ruffler">
+        <button class="button">Ruffler</button>
+      </a>
+    </div>
+  </div>
+    <script>
+      const buttonRow = document.querySelector('.buttonrow');
+      const buttons = document.querySelectorAll('.button');
+  
+      function resizeButtons() {
+        const rowWidth = buttonRow.offsetWidth;
+        const buttonCount = buttons.length;
+        const buttonWidth = rowWidth / buttonCount;
+  
+        buttons.forEach(button => {
+          button.style.width = buttonWidth + 'px';
+        });
+      }
+  
+      resizeButtons();
+      window.addEventListener('resize', resizeButtons);
+    </script>
+
+  <div class="header">
+    <img src="./Rufflerlogo.png" alt="Ruffle Logo" class="ItchioLogo">
+     <div class="header-text">
+     <span class="header-title">
+     <h1>Ruffler</h1>
+     </span>
+     <p>An online Ruffle html game hoster</p>
+   </div>
+  </div>
+
+    <p>Made By yours truly, ThePotatoGamer0.</p>
+</body>
