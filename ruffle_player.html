@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ruffle Player</title>
+</head>
+<body>
+  <div id="ruffle-container" style="width: 640px; height: 480px;"></div>
+  <script src="./Ruffle/ruffle.js"></script>
+  <script>
+    function loadRufflePlayer(pathtogame) {
+      window.RufflePlayer = window.RufflePlayer || {};
+
+      window.addEventListener("DOMContentLoaded", () => {
+        let ruffle = window.RufflePlayer.newest();
+        let player = ruffle.createPlayer();
+        let container = document.getElementById("ruffle-container");
+        container.appendChild(player);
+        player.ruffle().load(pathtogame);
+      });
+    }
+
+    // Get the path from the URL parameters
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const gamePath = urlParams.get('game');
+
+    // Load the SWF file if a path is provided
+    if (gamePath) {
+      loadRufflePlayer(gamePath);
+    }
+  </script>
+</body>
+</html>
