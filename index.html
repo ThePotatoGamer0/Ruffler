@@ -99,8 +99,9 @@
      <p>An online Ruffle html game hoster</p>
    </div>
   </div>
-  <div id="container"></div>
+  <div id="container" width="auto"></div>
   <script>
+    function makeRufflePlayer(pathtogame) {
     window.RufflePlayer = window.RufflePlayer || {};
 
     window.addEventListener("DOMContentLoaded", () => {
@@ -108,11 +109,13 @@
         let player = ruffle.createPlayer();
         let container = document.getElementById("container");
         container.appendChild(player);
-        player.ruffle().load("./games/bloons-td-5.swf");
+        player.ruffle().load(pathtogame);
     });
+  }
 </script>
 <script src="./Ruffle/ruffle.js"></script>
 
-
+<button onclick="makeRufflePlayer('./games/bloons-td-5.swf')">Bloons Td 5</button>
+<button onclick="makeRufflePlayer('./games/Papas Pizzeria.swf')">Papas Pizzeria</button>
     <p>Made By yours truly, ThePotatoGamer0.</p>
 </body>
