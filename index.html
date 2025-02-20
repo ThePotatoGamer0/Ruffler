@@ -4,6 +4,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Itch.io BrowserGames</title>
     <style>
+        .body {
+          background-color:#222222;
+          font-family: verdana;
+          color:#FFFFFF;
+        }
         .websiteselectionbar {
           display: flex;
           flex-direction: row;
@@ -55,9 +60,13 @@
           margin: 0px;
         }
 
+        .gamebutton {
+          border-radius: 25%;
+        }
+
       </style>
 </head>
-<body style="background-color:#222222; font-family: verdana; color:#FFFFFF;">
+<body>
   <div class="websiteselectionbar">
     <img src="./TPGLogo.jpg" alt="PotatoGamer Logo">
     <div class="buttonrow">
@@ -99,7 +108,7 @@
      <p>An online Ruffle html game hoster</p>
    </div>
   </div>
-<button onclick="window.location.href='ruffle_player.html?game=./games/bloons-td-5.swf'">Bloons Td 5</button>
-<button onclick="window.location.href='ruffle_player.html?game=./games/Papas Pizzeria.swf'">Papas Pizzeria</button>
+<button onclick="window.location.href='ruffle_player.html?game=./games/bloons-td-5.swf'" class="gamebutton">Bloons Td 5</button>
+<button onclick="window.location.href='ruffle_player.html?game=./games/Papas Pizzeria.swf'" class="gamebutton">Papas Pizzeria</button>
     <p>Made By yours truly, ThePotatoGamer0.</p>
 </body>
