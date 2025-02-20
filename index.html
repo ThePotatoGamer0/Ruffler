@@ -56,7 +56,6 @@
         }
 
       </style>
-      <script src="./ruffle/ruffle.js"></script>
 </head>
 <body style="background-color:#222222; font-family: verdana; color:#FFFFFF;">
   <div class="websiteselectionbar">
@@ -100,7 +99,18 @@
      <p>An online Ruffle html game hoster</p>
    </div>
   </div>
-  <embed src="./games/bloons-td-5.swf" width="400" height="400"></embed>
+  <script>
+    window.RufflePlayer = window.RufflePlayer || {};
+
+    window.addEventListener("DOMContentLoaded", () => {
+        let ruffle = window.RufflePlayer.newest();
+        let player = ruffle.createPlayer();
+        let container = document.getElementById("container");
+        container.appendChild(player);
+        player.ruffle().load("./games/bloons-td-5.swf");
+    });
+</script>
+<script src="./ruffle/ruffle.js"></script>
 
 
     <p>Made By yours truly, ThePotatoGamer0.</p>
